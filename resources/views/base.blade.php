@@ -1,0 +1,10 @@
+<html>
+    <head>
+        <tittle>@yield('titulo')</tittle>
+</head>
+<body>
+    <h1>@yield('titulo')</h1>
+    <hr>
+    @yield('conteudo')
+</body>
+</html>
