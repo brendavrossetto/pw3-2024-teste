@@ -17,8 +17,9 @@ Route::get('/animais',
 Route::get('/animais/cadastrar',
 [AnimaisController::class, 'cadastrar'])->name
 ('animais.cadastrar');
-//nome da rota p criar o link
+//nome da rota p criar o link, vai p CADASTRAT
 
 Route::post('/animais.cadastrar',
 [AnimaisController::class, 'gravar'])->name
 ('animais.gravar');
+//VAI PRO GRAVAR (QUE AINDA NN EXISTE)

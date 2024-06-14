@@ -5,6 +5,7 @@
 @section('conteudo')
 <p>Preencha o formulario: </p>
 <form method="post" action="{{ route ('animais.gravar') }}">
+    @csrf
     <input type="text" name="nome"
     placeholder="Nome">
     <br>
