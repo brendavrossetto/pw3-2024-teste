@@ -23,3 +23,11 @@ Route::post('/animais.cadastrar',
 [AnimaisController::class, 'gravar'])->name
 ('animais.gravar');
 //VAI PRO GRAVAR (QUE AINDA NN EXISTE)
+
+Route::get('/animais/apagar/{animal}', 
+[AnimaisController::class,'apagar']) -> name('animais.apagar');
+
+Route::delete('/animais/apagar/{animal}', 
+[AnimaisController::class,'apagar']);
+
+
