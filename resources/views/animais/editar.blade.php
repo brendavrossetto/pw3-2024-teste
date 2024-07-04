@@ -1,4 +1,4 @@
-@extends('base')
+{{-- @extends('base')
 
 @section('titulo', 'Cadastrar')
 
@@ -14,7 +14,7 @@
 </div>
 @endif 
 
-<form method="post" action="{{ route ('animais.gravar') }}">
+<form method="post" action="{{ route ('pacientes.gravar') }}">
     @csrf
     <input type="text" name="nome"
     placeholder="Nome" value="{{ old('nome')}}">
@@ -34,4 +34,29 @@
     <input type="submit" name="Gravar">
 </form>
 
+@endsection --}}
+
+@extends('templates/layout')
+@section('titulo', 'Página de Produtos - Editar')
+@section('corpo')
+ <h1>Produtos - Editar</h1>
+ @if ($errors->any())
+ <p>Preencha os campos corretamente.</p>
+ <ul>
+ @foreach($errors->all() as $erro)
+ <li>{{ $erro }}</li>
+ @endforeach
+ </ul>
+ @endif
+ <form action="{{ route('animal/editar', $animal->id) }}" method="post">
+ @csrf
+ @method('put')
+
+ <p><input value="{{ old('nome', $animal->nome ?? '') }}" type="text" name="nome"
+placeholder="Nome do Animal" value=""></p>
+
+ <p><textarea name="descricao" cols="30" rows="10" placeholder="Descrição">{{
+old('descricao', $animal->descricao ?? '') }}</textarea></p>
+ <p><input type="submit" value="Gravar"></p>
+ </form>
 @endsection

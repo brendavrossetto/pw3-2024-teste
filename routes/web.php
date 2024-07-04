@@ -1,18 +1,19 @@
 <?php
 
 use App\Http\Controllers\AnimaisController;
+use App\Http\Controllers\UsuariosController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('inicial');
+})->name('index');
 
 //criar nossa rota
 
 Route::get('/animais',
 [AnimaisController::class, 'index'])->name
 ('animais');
-//qnd acessar a rota via get anamisas ele vai pegar  a função classe controler e executar o index, rota index dos nimais se chama anmilais
+//qnd acessar a rota via get anamisas ele vai pegar  a função classe controler e executar o index, rota index dos nimais se chama anmiais
 
 Route::get('/animais/cadastrar',
 [AnimaisController::class, 'cadastrar'])->name
@@ -27,7 +28,10 @@ Route::post('/animais.cadastrar',
 Route::get('/animais/apagar/{animal}', 
 [AnimaisController::class,'apagar']) -> name('animais.apagar');
 
-Route::delete('/animais/apagar/{animal}', 
-[AnimaisController::class,'apagar']);
+Route::get('/usuarios',
+[UsuariosController::class, 'index'])->name
+('usuarios');
 
-
+Route::post('/usuarios.cadastrar',
+[UsuariosController::class, 'gravar'])->name
+('usuarios.gravar');

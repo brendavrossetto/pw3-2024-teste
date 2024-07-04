@@ -2,26 +2,35 @@
 
 @extends('base')
 
-@section('titulo', 'Animais para doação')
+@section('titulo', 'Animais atuais:')
 
 @section('conteudo')
 <p>
-    <a href="{{ route('animais.cadastrar') }}" > Cadastrar animal</a>
-        Veja nossa lista de animais para doacao
+    <a href="{{ route('animais.cadastrar') }}" > Cadastrar mais um animal</a>
+        Veja a lista de animais: 
 </p>
 
 <table border="1">
 <tr>
+<th>Id</th>
 <th>Nome</th>
 <th>Idade</th>
+<th>Diagnostico</th>
+<th>Data de Internação</th>
+<th>Data da Alta</th>
 </tr>
 
 @foreach($animais as $animal )
     
 <tr>
+<td>{{ $animal['id'] }}</td>
 <td>{{ $animal['nome'] }}</td>
 <td> {{ $animal['idade'] }} </td>
-<td><a href="{{route('animais.apagar', $animal['id'])}}">Apagar</a></td>
+<td> {{ $animal['diagnostico'] }} </td>
+<td> {{ $animal['dataInternacao'] }} </td>
+<td> {{ $animal['dataAlta'] }} </td>
+
+{{-- <td><a href="{{route('animal.apagar', $animal['id'])}}">Apagar</a></td> --}}
 </tr>
 
 @endforeach

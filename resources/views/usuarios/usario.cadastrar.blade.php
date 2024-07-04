@@ -14,7 +14,7 @@
 </div>
 @endif 
 
-<form method="post" action="{{ route ('animais.gravar') }}">
+<form method="post" action="{{ route ('usuarios.gravar') }}">
     @csrf
     <input type="text" name="nome"
     placeholder="Nome" value="{{ old('nome')}}">
@@ -22,14 +22,14 @@
     <input type="number" name="idade"
     placeholder="Idade" value="{{ old('idade')}}">
     <br>
-    <input type="text" name="diagnostico"
-    placeholder="Diagnostico" value="{{ old('diagnostico')}}">
+    <input type="text" name="email"
+    placeholder="Emsil" value="{{ old('email')}}">
     <br>
-    <input type="text" name="dataInternacao"
-    placeholder="Data da internacao" value="{{ old('dataInternacao')}}">
+    <input type="text" name="user"
+    placeholder="User" value="{{ old('user')}}">
     <br>
-    <input type="text" name="dataAlta"
-    placeholder="Data da alta" value="{{ old('dataAlta')}}">
+    <input type="text" name="senha"
+    placeholder="Senha" value="{{ old('senha')}}">
     <br>
     <input type="submit" name="Gravar">
 </form>
