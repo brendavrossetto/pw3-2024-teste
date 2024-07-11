@@ -9,6 +9,10 @@
     |
     <a href="{{('animais')}}">Animais</a>
     <hr>
+    <a href="{{('usuarios')}}">Usuarios</a>
+    <hr>
+    <a href="{{('login')}}">Login</a>
+    <hr>
     @yield('conteudo')
 </body>
 </html>
