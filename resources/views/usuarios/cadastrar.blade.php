@@ -31,7 +31,7 @@
     <select name="admin"> 
     <option value="null">Selecione o admin</option>
     <option value="1">yess</option>
-    <option value="2">noo</option>
+    <option value="0">noo</option>
     </select>
     <br>
     <input type="submit" name="Gravar">

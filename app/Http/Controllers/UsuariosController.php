@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -26,7 +27,7 @@ class UsuariosController extends Controller
         // // dd($form);
         // echo $form->nome;
         $dados = $form->validate([
-            'nome' => 'required|min:3',
+            'name' => 'required|min:3',
             'email' => 'required|min:3|unique:usuarios',
             'username' => 'required|min:3',
             'password' => 'required|min:3',
@@ -62,7 +63,7 @@ class UsuariosController extends Controller
 
     public function editarGravar(Request $form, Usuario $usuario) {
         $dados = $form->validate([
-        'nome' => 'required|max:255',
+        'name' => 'required|max:255',
         'email' => 'email|required',
         'username' => 'required|max:255',
         'password' => 'required|max:255',
@@ -78,13 +79,27 @@ class UsuariosController extends Controller
         //verifica se é post ou get e sse os dados form enviados 
         if ($form->isMethod('POST')){
             //testando formulatio
-            dd($form);
+
+            //pega os dadso do form
+            $credenciais = $form->validate ([
+                'username' => 'required',
+                'password' => 'required',
+            ]);
+
+            //tenta fazer o login
+            if (Auth::attempt($credenciais)){
+                return redirect()->route('index');
+            } else {
+                return redirect()->route('login')
+                ->with('erro', 'Usuario ou senha invalidos');
+            }
         }
 
         return view('usuarios.login');
     }
 
     public function logout() {
-
-    }
+        Auth::logout();
+            return redirect()->route('index');
+        }
 }

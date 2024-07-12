@@ -34,7 +34,7 @@ Route::get('/animais/apagar/{animal}',
 Route::get('/usuarios', [UsuariosController::class, 'index'])->name('usuarios');
 // quando acassar a rota via get animais ele vai pegar a funcao  controller e executar o index
 
-Route::get('/usuarios/cadastrar', [UsuariosController::class, 'cadastrar'])->name('usuario.cadastrar');
+Route::get('/usuarios/cadastrar', [UsuariosController::class, 'cadastrar'])->name('usuarios.cadastrar');
 
 Route::post('/usuarios/cadastrar', [UsuariosController::class, 'gravar'])->name('usuarios.gravar');
 

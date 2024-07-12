@@ -7,12 +7,18 @@
     <hr>
     <a href="{{route('index')}}">Inicial</a>
     |
-    <a href="{{('animais')}}">Animais</a>
+    <a href="{{route('animais')}}">Animais</a>
     <hr>
-    <a href="{{('usuarios')}}">Usuarios</a>
+    <a href="{{route('usuarios')}}">Usuarios</a>
     <hr>
-    <a href="{{('login')}}">Login</a>
+    @if (Auth::user())
+    ola, <strong> {{Auth::user()['name']}}</strong>
+    <a href="{{route('logout')}}">Logout</a>
+    @else 
+    <a href="{{route('login')}}">Login</a>
+    @endif
     <hr>
+    
     @yield('conteudo')
 </body>
 </html>
