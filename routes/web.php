@@ -30,19 +30,17 @@ Route::get('/animais/apagar/{animal}',
 
 ////////////////////////////////////////////////////////////////////
 
+Route::prefix('usuarios')->middleware('auth')->group(function() { 
+Route::get('/', [UsuariosController::class, 'index'])
+->name('usuarios');
 
-Route::get('/usuarios', [UsuariosController::class, 'index'])->name('usuarios');
-// quando acassar a rota via get animais ele vai pegar a funcao  controller e executar o index
+Route::get('/cadastrar', [UsuariosController::class, 'cadastrar'])->name('usuarios.cadastrar');
 
-Route::get('/usuarios/cadastrar', [UsuariosController::class, 'cadastrar'])->name('usuarios.cadastrar');
+Route::post('/cadastrar', [UsuariosController::class, 'gravar'])->name('usuarios.gravar');
 
-Route::post('/usuarios/cadastrar', [UsuariosController::class, 'gravar'])->name('usuarios.gravar');
-
-
-Route::get('usuarios/apagar/{usuario}', [UsuariosController::class, 'apagar'])->name('usuarios.apagar');
-
-Route::delete('usuarios/apagar/{usuario}', [UsuariosController::class, 'deletar']);
-
+Route::get('/apagar/{usuario}', 
+[UsuariosController::class, 'apagar'])->name('usuarios.apagar');
+});
 
 Route::get('login', [UsuariosController::class, 'login'])->name('login');
 

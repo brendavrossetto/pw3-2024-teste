@@ -15,7 +15,8 @@
 <th>Id</th>
 <th>Nome</th>
 <th>Email</th>
-<th>Senha</th>
+<th>Username</th>
+<th>Admin</th>
 
 </tr>
 
@@ -23,11 +24,10 @@
     
 <tr>
 <td>{{ $usuario['id'] }}</td>
-<td>{{ $usuario['nome'] }}</td>
+<td>{{ $usuario['name'] }}</td>
 <td> {{ $usuario['email'] }} </td>
-<td> {{ $usuario['senha'] }} </td>
-
-
+<td>@if($usuario['admin']== 0) não @else sim @endif</td>
+<td> <a href="{{route('usuarios.apagar', $usuario['id'])}}"></a>Apagar</td>
 </tr>
 
 @endforeach
