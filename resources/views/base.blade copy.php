@@ -11,7 +11,7 @@
     <a href="{{route('animais')}}">Animais</a>
     <hr>
      @if (Auth::user() && Auth::user() ['admin'])
-    <a href="{{route('usuarios')}}">Usuarios</a>
+    <a href="{{route('usuarios')}}">Usuarios !!</a>
     <hr>
     @endif
     @if (Auth::user())
