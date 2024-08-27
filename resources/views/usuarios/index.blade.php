@@ -6,7 +6,9 @@
 
 @section('conteudo')
 <p>
-    <a href="{{ route('usuarios.cadastrar') }}" > Cadastrar mais um usuario</a>
+    <a href="{{ route('usuarios.cadastrar') }}" 
+   > 
+    Cadastrar mais um animal</a>
         Veja a lista de usuarios: 
 </p>
 
