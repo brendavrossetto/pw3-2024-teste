@@ -14,10 +14,12 @@
 </div>
 @endif 
 
-<form method="post" action="{{ route ('animais.gravar') }}">
+<div class="leading-loose">
+ 
+<form method="post" action="{{ route ('animais.gravar') }}" class="max-w-xl m-4 p-10 bg-white rounded shadow-xl">
     @csrf
-    <input type="text" name="nome"
-    placeholder="Nome" value="{{ old('nome')}}">
+    <input type="text" name="nome" 
+    placeholder="Nome" value="{{ old('nome')}}" >
     <br>
     <input type="number" name="idade"
     placeholder="Idade" value="{{ old('idade')}}">
