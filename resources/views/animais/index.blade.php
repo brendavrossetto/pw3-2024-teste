@@ -17,6 +17,7 @@
     <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Id</th>
     <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Nome</th>
     <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Idade</th>
+    <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Apagar</th>
   
     </tr>
     </thead>
@@ -29,6 +30,7 @@
 <td class="w-1/3 text-left py-3 px-4">{{ $animal['id'] }}</td>
 <td class="w-1/3 text-left py-3 px-4">{{ $animal['nome'] }}</td>
 <td class="w-1/3 text-left py-3 px-4"> {{ $animal['idade'] }} </td>
+<td class="w-1/3 text-left py-3 px-4"> {{ $animal['apagar'] }} </td>
 
 
 {{-- <td><a href="{{route('animal.apagar', $animal['id'])}}">Apagar</a></td> --}}

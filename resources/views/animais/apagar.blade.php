@@ -14,4 +14,4 @@
 
 <a href="{{ route('animais') }}">Cancelar</a>
 
-@endsectionphp
+@endsection
